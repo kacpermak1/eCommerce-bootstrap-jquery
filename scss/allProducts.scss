@@ -1,0 +1,62 @@
+.underline{
+    width:100px;
+    height:2px;
+    background-color:#cca120;
+}
+
+.bg-light-gray{
+    background-color: rgb(236, 235, 235);
+}
+
+.all-products-header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h3{
+        border-bottom: 2px solid #cca120;
+        padding: 5px;
+    }
+}
+
+div#card{
+    padding-right: 0;
+    padding-left: 0;
+    width:100%;
+}
+
+.media img{
+    max-width: 120px;
+    height:auto;
+}
+
+@mixin underline {
+    content: "";
+    width:60px;
+    height:2px;
+    position: absolute;
+    bottom: -12px;
+    left:0;
+}
+
+h4.underline-green{
+    position: relative;
+&::after{
+    @include underline;
+    background-color: palegreen;
+}}
+
+h4.underline-blue{
+    position: relative;
+&::after{
+    @include underline;
+    background-color: rgb(69, 69, 219);
+}}
+
+h4.underline-yellow{
+    position: relative;
+&::after{
+    @include underline;
+    background-color: rgb(238, 238, 63);
+}}
