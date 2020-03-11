@@ -5,7 +5,7 @@ const sourcemaps = require("gulp-sourcemaps");
 const browserSync = require("browser-sync").create();
 
 gulp.task("jshint", function () {
-    return gulp.src("*.js")            /* Przeszukaj folder js */
+    return gulp.src("./js/*.js")            /* Przeszukaj folder js */
         .pipe(jshint())
         .pipe(jshint.reporter("default"))
 });
@@ -29,5 +29,6 @@ gulp.task("watch", function () {
     })
     gulp.watch("scss/**/*.scss", gulp.series("sass"));
     gulp.watch("./*.html").on('change', browserSync.reload);
+    gulp.watch("./js/*.js").on('change', browserSync.reload);
     gulp.watch("./*.js").on('change', browserSync.reload);
 });
